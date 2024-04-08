@@ -31,7 +31,7 @@ describe("Parser", function()
         end)
 
         it("Can get plugin name from git HTTPS URLs", function()
-            local url = "https://gitlab.com/nvim-neorocks/rocks-git.nvim.git"
+            local url = "https://git.sr.ht/~nvim-neorocks/rocks-git.nvim.git"
             assert.same("rocks-git.nvim", parser.plugin_name_from_git_uri(url))
         end)
 
