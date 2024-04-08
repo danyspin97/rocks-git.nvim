@@ -27,7 +27,7 @@ describe("Parser", function()
     describe("plugin_name_from_git_uri", function()
         it("Can get plugin name from git SSH URLs", function()
             local url = "git@github.com:nvim-neorocks/rocks-git.nvim.git"
-            assert.same("rocks-git.nvim", parser.plugin_name_from_git_uri(url))
+            assert.same("iiiirocks-git.nvim", parser.plugin_name_from_git_uri(url))
         end)
 
         it("Can get plugin name from git HTTPS URLs", function()
