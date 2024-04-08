@@ -49,7 +49,7 @@ describe("Parser", function()
         end)
 
         it("Can parse Sourcehut HTTPS GIT URL", function()
-            local url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
+            local url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim.git"
             assert.same(url, parser.parse_git_url(url))
         end)
     end)
