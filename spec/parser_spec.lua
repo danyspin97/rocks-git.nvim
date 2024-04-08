@@ -27,11 +27,11 @@ describe("Parser", function()
     describe("plugin_name_from_git_uri", function()
         it("Can get plugin name from git SSH URLs", function()
             local url = "git@github.com:nvim-neorocks/rocks-git.nvim.git"
-            assert.same("iiiirocks-git.nvim", parser.plugin_name_from_git_uri(url))
+            assert.same("rocks-git.nvim", parser.plugin_name_from_git_uri(url))
         end)
 
         it("Can get plugin name from git HTTPS URLs", function()
-            local url = "https://git.sr.ht/~nvim-neorocks/rocks-git.nvim.git"
+            local url = "https://github.com/nvim-neorocks/rocks-git.nvim.git"
             assert.same("rocks-git.nvim", parser.plugin_name_from_git_uri(url))
         end)
 
@@ -46,6 +46,11 @@ describe("Parser", function()
             local shorthand = "nvim-neorocks/rocks-git.nvim"
             local url = "https://github.com/nvim-neorocks/rocks-git.nvim.git"
             assert.same(url, parser.parse_git_url(shorthand))
+        end)
+
+        it("Can parse Sourcehut HTTPS GIT URL", function()
+            local url = "https://git.sr.ht/~whynothugo/lsp_lines.nvim"
+            assert.same(url, parser.parse_git_url(url))
         end)
     end)
 
